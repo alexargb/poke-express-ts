@@ -1,0 +1,19 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "parserOptions": { "ecmaVersion": 2018, "sourceType": "module" },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".ts"],
+        "map": [
+          ["~/*", "./src/*"],
+          ["~/types/*", "./types/*"],
+          ["~/utils/*", "./src/utils/*"],
+          ["~/api/*", "./src/api/*"]
+        ]
+      }
+    }
+  },
+  "rules": {}
+}

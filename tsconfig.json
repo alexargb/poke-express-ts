@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "outDir": "dist",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    "types": ["jest"],
+
+    "paths": {
+        "~/*": ["./src/*"],
+        "~/types/*": ["./types/*"],
+        "~/utils/*": ["./src/utils/*"],
+        "~/api/*": ["./src/api/*"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
