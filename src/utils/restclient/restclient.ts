@@ -7,16 +7,28 @@ import type {
 } from '~/types/axios';
 
 export class RestClient implements IRestClient {
+  constructor(baseUrl?: string) {
+    if (baseUrl)
+      this.baseUrl = baseUrl;
+  }
+  private baseUrl: string = ''
+
   // private methods
+  private getUrl(url: string) {
+    return this.baseUrl + url;
+  }
+
   private async executeEmptyRequest(method: NoBodyRequest, url: string, options: RequestOptions) {
-    const response = await method(url, options);
+    const requestUrl = this.getUrl(url);
+    const response = await method(requestUrl, options);
     return response.data;
   }
 
   private async executeBodyRequest(method: BodyRequest, url: string, options: RequestOptions) {
     const data = options.body;
     delete options.body;
-    const response = await method(url, data, options);
+    const requestUrl = this.getUrl(url);
+    const response = await method(requestUrl, data, options);
     return response.data;
   }
 
