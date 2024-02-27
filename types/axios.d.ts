@@ -14,6 +14,7 @@ export type RequestOptions = {
   params?: RequestParams,
   headers?: RequestHeaders,
   body?: RequestBody,
+  cacheKey?: string,
 };
 
 export interface IRestClient {
