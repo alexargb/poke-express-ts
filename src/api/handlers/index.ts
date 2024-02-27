@@ -1,2 +1,1 @@
-export { example } from './example';
-export { badExample } from './badExample';
+export { generations } from './generation';

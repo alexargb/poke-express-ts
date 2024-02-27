@@ -1,10 +1,9 @@
 import express from 'express';
-import { example, badExample } from './handlers';
+import { generations } from './handlers';
 
 const apiRouter = express.Router();
 
 // routes
-apiRouter.use('/example', example);
-apiRouter.use('/bad-example', badExample);
+apiRouter.use('/generation', generations);
 
 export { apiRouter };
